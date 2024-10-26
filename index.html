@@ -3,9 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Сайт с мини-играми</title>
 </head>
 <body>
+    <div class="top">
+    <header class="center">
+        <h1 class="heading">Добро пожаловать <br>на мой сайт мини-игр</h1>
+        <p class="heading__small">Тебе предстоит пройти несколько увлекательных игр. <br>Если готов, нажимай <span class="heading__small heading__small_bold">«Поехали!»</span> и <span class="heading__small heading__small_bold">приступай</span></p>
+        <button class="heading__button">Поехали!</button>
+    </header>
+    <div class="animation">
+        <p class="animation__text">Викторина</p>
+        <p class="animation__text">угадай число</p>
+        <p class="animation__text">Переверни текст</p>
+        <p class="animation__text">Простая арифметика</p>
+    </div>
+    </div>
+
+    <div class="about center">
+        <h1 class="about__heading">Об играх</h1>
+        <p class="about__description">В моей коллекции представлено 6 игр на разные темы <br> Игры несложные — в них может поиграть каждый. <br> Все игры доступны для пользования.</p>
+        <div class="about__box">
+            <a class="about__link" href="#number">
+                <img class="about__image" src="images/about_number.jpeg" alt="Number">
+                <p class="about__count">Игра № 1</p>
+                <h2 class="about__game">Угадай число</h2>
+            </a>
+            <a class="about__link" href="#count">
+                <img class="about__image" src="images/about_count.jpeg" alt="Count">
+                <p class="about__count">Игра № 2</p>
+                <h2 class="about__game">Простая арифметика</h2>
+            </a>
+            <a class="about__link" href="#text">
+                <img class="about__image" src="images/about_text.jpeg" alt="Text">
+                <p class="about__count">Игра № 3</p>
+                <h2 class="about__game">Переверни текст</h2>
+            </a>
+            <a class="about__link" href="#game">
+                <img class="about__image" src="images/about_game.jpeg" alt="Game">
+                <p class="about__count">Игра № 4</p>
+                <h2 class="about__game">Камень, ножницы, бумага</h2>
+            </a>
+            <a class="about__link" href="#simplegame">
+                <img class="about__image" src="images/about_simplegame.jpeg" alt="Simple">
+                <p class="about__count">Игра № 5</p>
+                <h2 class="about__game">Простая викторина</h2>
+            </a>
+            <a class="about__link" href="#colors">
+                <img class="about__image" src="images/about_colors.jpeg" alt="Colors">
+                <p class="about__count">Игра № 6</p>
+                <h2 class="about__game">Генератор случайных цветов</h2>
+            </a>
+        </div>
+    </div>
     
+    <div class="games center">
+        <h1 class="games__heading">Мини-игры</h1>
+        <div class="games__box">
+            <article id="number" class="games__card">
+                <div class="games__discription">
+                    <h2 class="games__name">Угадай число</h2>
+                    <p class="games__task">Попробуй угадать случайное число от 1 до 100.</p>
+                    <button class="games__button">Играть!</button>
+                </div>
+                <img src="images/about_number.jpeg" alt="Number">
+            </article>
+            <article id="count" class="games__card">
+                <div class="games__discription">
+                    <h2 class="games__name">Простая арифметика</h2>
+                    <p class="games__task">Попробуй решить простые арифметические задачи.</p>
+                    <button class="games__button">Играть!</button>
+                </div>
+                <img src="images/about_count.jpeg" alt="Count">
+            </article>
+            <article id="text" class="games__card">
+                <div class="games__discription">
+                    <h2 class="games__name">Переверни текст</h2>
+                    <p class="games__task">Попробуй ввести текст, который будет перевернут.</p>
+                    <button class="games__button">Играть!</button>
+                </div>
+                <img src="images/about_text.jpeg" alt="Text">
+            </article>
+            <article id="simplegame" class="games__card">
+                <div class="games__discription">
+                    <h2 class="games__name">Викторина</h2>
+                    <p class="games__task">Отвечай на вопросы викторины с вариантами ответов.</p>
+                    <button class="games__button">Играть!</button>
+                </div>
+                <img src="images/about_simplegame.jpeg" alt="Simplegame">
+            </article>
+            <article id="game" class="games__card">
+                <div class="games__discription">
+                    <h2 class="games__name">Камень, ножницы, бумага</h2>
+                    <p class="games__task">Сыграй в популярную игру против компьютера.</p>
+                    <button class="games__button">Играть!</button>
+                </div>
+                <img src="images/about_game.jpeg" alt="Game">
+            </article>
+            <article id="colors" class="games__card">
+                <div class="games__discription">
+                    <h2 class="games__name">Генератор случайных цветов</h2>
+                    <p class="games__task">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                    <button class="games__button">Играть!</button>
+                </div>
+                <img src="images/about_colors.jpeg" alt="Colors">
+            </article>
+        </div>
+    </div>
+
+    <footer class="footer center">
+        <p>Все права защищены.</p>
+    </footer>
 </body>
 </html>
