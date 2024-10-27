@@ -173,7 +173,7 @@
     text-align: left;
 }
 
-.about__linkbox_big {
+.about__linkbox:nth-child(even) {
     height: 512px;
 }
 
@@ -192,7 +192,7 @@
     width: 1200px;
 }
 
-.games__card_reverce {
+.games__card:nth-child(even) {
     flex-direction: row-reverse;
 }
 
