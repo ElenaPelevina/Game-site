@@ -100,7 +100,7 @@
 
 .about__box {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 
@@ -130,9 +130,14 @@
     text-align: left;
     margin-bottom: 72px;
 }
+.about__column {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
 
 .about__linkbox {
-    grid-column: span 4;
     background-color: white;
     border-radius: 30px;
     width: 378px;
@@ -183,7 +188,7 @@
     text-align: left;
 }
 
-.about__linkbox:nth-child(even) {
+.about__linkbox_big {
     height: 512px;
 }
 
