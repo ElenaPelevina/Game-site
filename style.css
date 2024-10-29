@@ -3,7 +3,7 @@
     padding: 0;
 }
 .top {
-    min-height: 800px;
+    height: 800px;
     background: 
     url(images/stars.svg) 854px -334px no-repeat,
     url(images/stars2.svg) 948px 538px no-repeat,
@@ -31,6 +31,10 @@
     letter-spacing: 0px;
     text-align: left;
     padding-top: 196px;
+}
+
+.heading__title_mob {
+    display: none;
 }
 
 .heading__small {
@@ -288,4 +292,78 @@ button:hover {
     letter-spacing: 0px;
     text-align: center;
     padding-top: 61px;
+}
+
+@media (max-width: 767px) {
+    .top {
+        height: 700px;
+        background: 
+        url(images/stars-mobile.svg) 38px -104px no-repeat,
+        url(images/stars2.svg) 273px 557px no-repeat,
+        linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143));
+    }
+
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .heading {
+        align-items: center;
+        row-gap: 36px;
+        padding-bottom: 131px;
+    }
+
+    .heading__title {
+        display: none;
+    }
+
+    .heading__title_mob {
+        display: flex;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 49px;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-top: 147px;
+        padding-left: 41px;
+        padding-right: 41px;
+    }
+
+    .heading__small {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-left: 39px;
+        padding-right: 39px;
+    }
+
+    .heading__button {
+        font-size: 16px;
+        font-weight: 600;
+        width: 285px;
+        height: 55px;
+        margin-top: 0;
+    }
+
+    .animation {
+        height: 51px;
+    }
+     /* Временно до создания эффекта анимации */
+    .animation__text {
+        display: none;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 110%;
+    }
+
+    .animation__image {
+        width: 19px;
+    }
+
+    .about {
+        display: none;
+    }
 }
