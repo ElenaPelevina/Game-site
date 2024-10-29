@@ -21,7 +21,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     row-gap: 24px;
-    padding-bottom: 246px;
+    padding-bottom: 156px;
 }
 .heading__title {
     color: rgb(32, 32, 39);
@@ -51,6 +51,10 @@
     font-weight: 600;
 }
 
+.heading__small_mob {
+    display: none;
+}
+
 .heading__button {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -66,7 +70,7 @@
     height: 66px;
     width: 247px;
     margin-top: 24px;
-    padding-top: 16px;
+    align-content: center;
     transition: 1s;
 }
 .heading__button:hover {
@@ -299,7 +303,7 @@ button:hover {
         height: 700px;
         background: 
         url(images/stars-mobile.svg) 38px -104px no-repeat,
-        url(images/stars2.svg) 273px 557px no-repeat,
+        url(images/stars-mobile2.svg) 273px 557px no-repeat,
         linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143));
     }
 
@@ -310,7 +314,6 @@ button:hover {
 
     .heading {
         align-items: center;
-        row-gap: 36px;
         padding-bottom: 131px;
     }
 
@@ -328,6 +331,15 @@ button:hover {
         padding-top: 147px;
         padding-left: 41px;
         padding-right: 41px;
+        
+    }
+    .heading__description {
+        display: none;
+    }
+    .heading__small_mob {
+        display: inline;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .heading__small {
@@ -336,8 +348,10 @@ button:hover {
         line-height: 20px;
         letter-spacing: 0px;
         text-align: center;
-        padding-left: 39px;
-        padding-right: 39px;
+    }
+
+    .heading__small_bold {
+        font-weight: 600;
     }
 
     .heading__button {
@@ -345,7 +359,7 @@ button:hover {
         font-weight: 600;
         width: 285px;
         height: 55px;
-        margin-top: 0;
+        margin-top: 12px;
     }
 
     .animation {
@@ -365,5 +379,72 @@ button:hover {
 
     .about {
         display: none;
+    }
+    .games__heading {
+        margin-top: 0;
+        padding-top: 48px;
+        margin-bottom: 48px;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 49px;
+    }
+    .games__card {
+        flex-direction: column-reverse;
+    }
+    .games__card:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .games__image {
+        width: 100%;
+    }
+
+    .games__name {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 39px;
+    }
+
+    .games__task {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 0;
+    }
+
+    .games__button {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 141.69%;
+        height: 55px;
+        margin-top: 16px;
+        width: 100%;
+        margin-right: 29px;
+    }
+
+    .games__discription {
+        row-gap: 16px;
+        padding-top: 29px;
+        padding-bottom: 33px;
+        width: 285px;
+        margin-left: 29px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .games__box {
+        row-gap: 24px;
+        padding-bottom: 49px;
+    }
+
+    .footer {
+        min-height: 100px;
+    }
+
+    .footer__text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        padding-top: 41px;
     }
 }
