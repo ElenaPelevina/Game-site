@@ -225,7 +225,7 @@
 }
 
 .games__discription {
-    width: 600px;
+    width: 50%;
     padding: 48px;
     display: flex;
     flex-direction: column;
@@ -420,16 +420,17 @@ button:hover {
         margin-top: 16px;
         width: 100%;
         margin-right: 29px;
+        box-sizing: border-box;
     }
 
     .games__discription {
         row-gap: 16px;
         padding-top: 29px;
         padding-bottom: 33px;
-        width: 285px;
-        margin-left: 29px;
-        padding-left: 0;
-        padding-right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 29px;
+        padding-right: 29px;
     }
 
     .games__box {
