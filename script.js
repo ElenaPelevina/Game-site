@@ -52,3 +52,15 @@ const user = {
 //Task 10//
 const name = prompt('Как Вас зовут?');
 alert(`Привет, ${name}!`);
+
+//Additional task//
+let number = Number(prompt('Загадайте любое число!'));
+let numberDouble = number * 2;
+alert(numberDouble);
+let numberDoublePlus = numberDouble + 10;
+alert(numberDoublePlus);
+let numberDoublePlusDiv = numberDoublePlus / 2;
+alert(numberDoublePlusDiv);
+let finalNumber = numberDoublePlusDiv - number;
+alert(finalNumber);
+alert('В результате получилось число 5!');
