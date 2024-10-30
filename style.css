@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
 .top {
     height: 800px;
     background: 
@@ -184,7 +188,7 @@
     background: rgb(247, 247, 247);
     box-sizing: border-box;
     padding: 8px 16px;
-    width: 108px;
+    max-width: 115px;
 }
 
 .about__game {
@@ -196,8 +200,11 @@
     text-align: left;
 }
 
-.about__linkbox_big {
+.about__linkbox_half {
     height: 512px;
+}
+.about__linkbox_big {
+    height: 551px;
 }
 
 .games__box {
@@ -411,6 +418,7 @@ button:hover {
         font-weight: 400;
         line-height: 20px;
         margin-bottom: 0;
+        width: 100%;
     }
 
     .games__button {
@@ -448,5 +456,49 @@ button:hover {
         font-weight: 600;
         line-height: 20px;
         padding-top: 41px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .center {
+    padding-left: calc(50% - 786px/2);
+    padding-right: calc(50% - 786px/2);
+    }
+
+    /* Временно до создания эффекта анимации */
+    .animation__text {
+        display: none;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 110%;
+    }
+
+    .about__box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
+
+    .about__column {
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .about__linkbox {
+        height: 512px;
+    }
+    .about__game {
+        font-size: 28px;
+    }
+
+    .games__heading {
+        margin-top: 72px;
+    }
+    .games__name {
+        font-size: 40px;
+    }
+    .games__task {
+        font-size: 20px;
     }
 }
