@@ -360,16 +360,20 @@ button:hover {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        column-gap: 30px;
+        justify-content: space-around;
+        gap: 15px; 
     }
 
     .about__column {
         flex-direction: row;
-        column-gap: 30px;
+        column-gap: 15px;
     }
 
     .about__linkbox {
         height: 512px;
+    }
+    .about__linkbox:hover {
+        transform: scale(1.01);
     }
     .about__game {
         font-size: 28px;
