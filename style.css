@@ -26,6 +26,7 @@ body {
     flex-wrap: wrap;
     row-gap: 24px;
     padding-bottom: 156px;
+    position: relative;
 }
 .heading__title {
     color: rgb(32, 32, 39);
@@ -85,10 +86,14 @@ body {
 .animation {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     column-gap: 51px;
     height: 90px;
     background-color: rgb(188, 236, 48);
+    position: absolute;
+    top: 710px;
+    z-index: 1;
 }
 
 .animation__text {
@@ -306,12 +311,89 @@ button:hover {
     padding-top: 61px;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1025px) and (max-width: 1320px) {
+    .center {
+        padding-left: calc(50% - 1025px/2);
+        padding-right: calc(50% - 1025px/2);
+    }
+
+    .about__box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about__column {
+        flex-direction: row;
+        column-gap: 60px;
+    }
+
+    .about__linkbox {
+        height: 512px;
+    }
+}
+
+@media (min-width:800px) and (max-width: 1024px) {
+    .center {
+    padding-left: calc(50% - 786px/2);
+    padding-right: calc(50% - 786px/2);
+    }
+
+    .top {
+        background: 
+        url(images/stars.svg) 250px -334px no-repeat,
+        url(images/stars2.svg) 550px 600px no-repeat,
+        url(images/stars3.svg) 63px 69px no-repeat,
+        linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143));
+    }
+
+
+   .content {
+    background: 
+    url(images/content-star1.svg) 400px 100px no-repeat,
+    url(images/content-star3.svg) 550px 2030px no-repeat,
+    url(images/content-star4.svg) 550px 4900px no-repeat,
+    linear-gradient(rgb(32, 32, 39),rgb(32, 32, 39));
+}
+
+    .about__box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
+
+    .about__column {
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .about__linkbox {
+        height: 512px;
+    }
+    .about__game {
+        font-size: 28px;
+    }
+
+    .games__heading {
+        margin-top: 72px;
+    }
+    .games__name {
+        font-size: 40px;
+    }
+    .games__task {
+        font-size: 20px;
+    }
+}
+
+     
+@media (max-width: 800px) {
     .top {
         height: 700px;
         background: 
-        url(images/stars-mobile.svg) 38px -104px no-repeat,
-        url(images/stars-mobile2.svg) 273px 557px no-repeat,
+        url(images/stars_for_ipadmini.svg) 550px -90px no-repeat,
+        url(images/stars2.svg) 550px 500px no-repeat,
+        url(images/stars3.svg) 63px 69px no-repeat,
         linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143));
     }
 
@@ -372,10 +454,10 @@ button:hover {
 
     .animation {
         height: 51px;
+        top: 649px;
     }
      /* Временно до создания эффекта анимации */
     .animation__text {
-        display: none;
         font-size: 16px;
         font-weight: 700;
         line-height: 110%;
@@ -398,6 +480,7 @@ button:hover {
     }
     .games__card {
         flex-direction: column-reverse;
+        border-radius: 38px;
     }
     .games__card:nth-child(even) {
         flex-direction: column-reverse;
@@ -459,46 +542,11 @@ button:hover {
     }
 }
 
-@media (max-width: 1024px) {
-    .center {
-    padding-left: calc(50% - 786px/2);
-    padding-right: calc(50% - 786px/2);
-    }
-
-    /* Временно до создания эффекта анимации */
-    .animation__text {
-        display: none;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 110%;
-    }
-
-    .about__box {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: 30px;
-    }
-
-    .about__column {
-        flex-direction: row;
-        column-gap: 30px;
-    }
-
-    .about__linkbox {
-        height: 512px;
-    }
-    .about__game {
-        font-size: 28px;
-    }
-
-    .games__heading {
-        margin-top: 72px;
-    }
-    .games__name {
-        font-size: 40px;
-    }
-    .games__task {
-        font-size: 20px;
+@media (max-width: 376px) {
+    .top {
+    background: 
+        url(images/stars-mobile.svg) 38px -104px no-repeat,
+        url(images/stars-mobile2.svg) 273px 557px no-repeat,
+        linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143));
     }
 }
