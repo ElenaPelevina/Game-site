@@ -585,7 +585,7 @@ button:hover {
     .content {
         background: 
         url(images/content-star1.svg) 1400px 146px no-repeat, 
-        url(images/content-star2.svg) 350px 770px no-repeat, 
+        url(images/content-star2.svg) 400px 770px no-repeat, 
         url(images/content-star3.svg) 1700px 1563px no-repeat, 
         url(images/content-star4.svg) 1700px 4836px no-repeat, 
         linear-gradient(rgb(32, 32, 39), rgb(32, 32, 39));
