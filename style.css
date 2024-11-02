@@ -88,8 +88,10 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     column-gap: 51px;
     height: 90px;
+    width: 100%;
     background-color: rgb(188, 236, 48);
     position: absolute;
     top: 710px;
@@ -552,5 +554,58 @@ button:hover {
         url(images/stars-mobile.svg) 38px -104px no-repeat,
         url(images/stars-mobile2.svg) 273px 557px no-repeat,
         linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143));
+    }
+}
+
+@media (min-width: 1600px) and (max-width:1999px) {
+    .top {
+    background: 
+    url(images/stars.svg) 1000px -334px no-repeat, 
+    url(images/stars2.svg) 1050px 538px no-repeat, 
+    url(images/stars3.svg) 150px 69px no-repeat, 
+    linear-gradient(rgb(225, 255, 143), rgb(225, 255, 143));
+    }
+    .content {
+        background: url(images/content-star1.svg) 1080px 146px no-repeat, 
+        url(images/content-star2.svg) 100px 770px no-repeat, 
+        url(images/content-star3.svg) 1400px 1563px no-repeat, 
+        url(images/content-star4.svg) 1400px 4836px no-repeat, 
+        linear-gradient(rgb(32, 32, 39), rgb(32, 32, 39));
+    }
+
+}
+@media (min-width: 2000px) and (max-width: 2499px) {
+    .top {
+        background: 
+        url(images/stars.svg) 1600px -334px no-repeat,
+        url(images/stars2.svg) 1600px 538px no-repeat,
+        url(images/stars3.svg) 400px 69px no-repeat,
+        linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143))
+    }
+    .content {
+        background: 
+        url(images/content-star1.svg) 1400px 146px no-repeat, 
+        url(images/content-star2.svg) 350px 770px no-repeat, 
+        url(images/content-star3.svg) 1700px 1563px no-repeat, 
+        url(images/content-star4.svg) 1700px 4836px no-repeat, 
+        linear-gradient(rgb(32, 32, 39), rgb(32, 32, 39));
+    }
+    }
+
+@media (min-width: 2500px) {
+    .top {
+        background: 
+        url(images/stars.svg) 2600px -334px no-repeat,
+        url(images/stars2.svg) 2500px 538px no-repeat,
+        url(images/stars3.svg) 800px 69px no-repeat,
+        linear-gradient(rgb(225, 255, 143),rgb(225, 255, 143))
+    }
+    .content {
+        background: 
+        url(images/content-star1.svg) 1900px 146px no-repeat, 
+        url(images/content-star2.svg) 900px 770px no-repeat, 
+        url(images/content-star3.svg) 2200px 1563px no-repeat, 
+        url(images/content-star4.svg) 2200px 4836px no-repeat, 
+        linear-gradient(rgb(32, 32, 39), rgb(32, 32, 39));
     }
 }
