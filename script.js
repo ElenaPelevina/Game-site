@@ -1,66 +1,108 @@
 // Task 1//
-let a = 10;
-alert(a);
-a = 20
-alert(a);
+let password = 'Test_2024';
+let passwordCheck = prompt("Введите пароль");
+if (passwordCheck === password) {
+    alert("Пароль введен верно");
+} else {
+    alert("Пароль введен неправильно");
+};
+//OR//
+alert(passwordCheck === password ? "Пароль введен верно" : "Пароль введен неправильно");
 
-//Task 2//
-let yearOfFirstIPhone = 2007
-alert(yearOfFirstIPhone);
+// Task 2/
+let c = 20;
+    c = 0;
+    c = 10;
+    c = -3;
+    c = 2;
+if (c > 0 && c < 10 ) {
+    console.log('Верно')
+} else {
+    console.log('Неверно')
+};
 
 //Task 3//
-let javaScriptCreator = 'Brendon Eich';
-alert (javaScriptCreator);
+let d = 20;
+let e = 45;
+if (d > 100 || e > 100) {
+    console.log('Верно');
+} else {
+    console.log('Неверно');
+};
 
 //Task 4//
-a = 10;
-let b = 2;
-alert(a + b);
-alert(a - b);
-alert(a * b);
-alert(a / b);
+let a = '2';
+let b = '3';
+alert(+a + +b);
 
 //Task 5//
-let result = b ** 5;
-alert(result);
+let monthNumber = prompt('Введите номер месяца')
+switch (monthNumber) {
+    case '1':
+    case '2':
+    case '12':
+        alert('Зима');
+        break;
 
-//Task 6//
-a = 9;
-alert(a % b);
+    case '3':
+    case '4':
+    case '5':
+        alert('Весна');
+        break;
+        
+    case '6':
+    case '7':
+    case '8':
+        alert('Лето');
+        break;
+        
+    case '9':
+    case '10':
+    case '11':
+        alert('Осень');
+        break;
 
-//Task 7//
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num += 1;
-num -= 1;
-alert(num);
+    default:
+    alert('Нет месяца под таким номером')
+        break;
+};
 
-//Task 8//
-let age = Number(prompt("Сколько вам лет?"));
-alert(age);
-
-//Task 9//
-const user = {
-    name: 'Jane',
-    age: 12,
-    isAdmin: false
+//Addtitonal//
+//Task 1//
+let number = prompt('Пожалуйста, введите любое число');
+let result = Number(number)
+if (isNaN(result)) {
+alert('Not a number')
+} else {
+alert("It's a Number!")
+if (result % 2 === 0) {
+    alert('Число четное')
+} else {
+    alert('Число нечетное')
 }
+};
 
-//Task 10//
-const name = prompt('Как Вас зовут?');
-alert(`Привет, ${name}!`);
+//Task 2//
+let clientOS = prompt('Введите OS Вашего телефона');
+let clientOSLowerCase = clientOS.toLowerCase();
+if (clientOSLowerCase === 'ios') {
+    alert('Установите версию приложения для iOS по ссылке');
+} else {
+    alert('Установите версию приложения для Android по ссылке');
+};
 
-//Additional task//
-let number = Number(prompt('Загадайте любое число!'));
-let numberDouble = number * 2;
-alert(numberDouble);
-let numberDoublePlus = numberDouble + 10;
-alert(numberDoublePlus);
-let numberDoublePlusDiv = numberDoublePlus / 2;
-alert(numberDoublePlusDiv);
-let finalNumber = numberDoublePlusDiv - number;
-alert(finalNumber);
-alert('В результате получилось число 5!');
+//Task 3//
+let clientOS = prompt('Введите OS Вашего телефона');
+let clientOSLowerCase = clientOS.toLowerCase();
+let clientDeviceYear = Number(prompt('Укажите год выпуска Вашего телефона'));
+
+if (clientOSLowerCase === 'ios' && clientDeviceYear >= 2015) {
+    alert('Установите версию приложения для iOS по ссылке');
+} else if (clientOSLowerCase === 'ios') {
+    alert('Установите облегченную версию приложения для iOS по ссылке');
+} else if (clientOSLowerCase !== 'ios' && clientDeviceYear >= 2015) {
+    alert('Установите приложения для Android по ссылке');
+}
+  else {
+    alert('Установите облегченную версию приложения для Android по ссылке');
+};
