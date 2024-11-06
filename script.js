@@ -45,38 +45,20 @@ do  {
 
 //Task 6//
 let firstFriday = 6;
-let dayCount = 0;
-while (dayCount <= 31) {
-    if (dayCount < 6) {
-        dayCount++;
-        continue;
-    }
-        console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`);
-        dayCount++;
-    if (dayCount < firstFriday + 7) {
-        dayCount++;
-        continue;
-    }
-    console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`);
-        dayCount++;
 
-    if (dayCount < firstFriday + 6 * 2) {
-            dayCount++;
-            continue;
-        }
-        console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`);
-            dayCount++;
-    
-    if (dayCount < firstFriday + 6 * 3) {
-                dayCount++;
-                continue;
-            }
-            console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`);
-                dayCount++;
-
-    if (dayCount === 31) {
-        break;
-    }
+for (let dayCount = 0; dayCount <= 31; dayCount++ ) {
+if (dayCount === firstFriday) {
+console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
+}
+if (dayCount === firstFriday + 7) {
+console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
+}
+if (dayCount === firstFriday + 7 * 2) {
+console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
+}
+if (dayCount === firstFriday + 7 * 3) {
+console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
+}
 }
 
 
