@@ -35,6 +35,7 @@ const guessNumber = () => {
     if (userNumber === randomNumber) {
     break; }
     alert(`Поздравляю! Вы угадали :))) Это было число ${randomNumber}!`);
+    return;
     }
     }
 
