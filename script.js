@@ -60,9 +60,9 @@ console.log(doubleNumber(5));
 const askAge = () => {
 let userAge = prompt('How old are you?');
 if (userAge < 0) {
-console.log('Вы ввели неправильное значение');
+alert('Вы ввели неправильное значение');
 } else if (userAge === 0 || userAge <= 12) {
-console.log('Привет, друг!');} else {console.log('Добро пожаловать!');}
+alert('Привет, друг!');} else {alert('Добро пожаловать!');}
 };
 askAge();
 
