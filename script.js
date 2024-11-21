@@ -1,105 +1,107 @@
-// Task 1//
-let i = 0;
-while (i < 2) {
-    console.log('Hello');
-    i++
-}
+const guessNumber = () => {
+    const min = 1;
+    const max = 100;
+    
+    let randomNumber = Math.floor(Math.random() * (max - min + 1));
+    console.log(randomNumber);
+    
+    alert('Попробуйте угадать число от 0 до 100!');
+    let userNumber = prompt('Введите Ваше число');
+    
+    if (isNaN(userNumber) === true) {
+    alert('Это не число');
+    } else if (userNumber > 100 || userNumber < 0) {
+    alert('Введенное число выходит за допустимый диапазон');
+    return;
+    } else if (userNumber === '') {
+    alert('Вы забыли ввести число. Начните заново!');
+    return;
+    }
+    
+    while (userNumber <= randomNumber || userNumber >= randomNumber) {
+    if (userNumber === null) {
+    alert('Спасибо за игру! Возвращайтесь снова :)');
+    return;
+    }
+    if (userNumber < randomNumber)
+    {
+    userNumber = prompt('Ваше число меньше загаданного. Попробуйте указать большее число');
+    continue;
+    }
+    if (userNumber > randomNumber) {
+    userNumber = prompt('Ваше число больше загаданного. Попробуйте указать меньшее число');
+    continue;
+    }
+    if (userNumber === randomNumber) {
+    break; }
+    alert(`Поздравляю! Вы угадали :))) Это было число ${randomNumber}!`);
+    return;
+    }
+    }
 
-//Task 2//
-let i = 1;
-do  {
-    console.log(i);
-    i++;
-} while (i <= 5);
 
-//Task 3//
-let i = 0;
-while (i <= 22) {
-if (i < 7) {
-i++;
-continue;
-}
-console.log(i);
-i++;
-}
 
-//Task 4//
-const obj = {
-    Коля: '200',
-    Вася: '300',
-    Петя: '400',
+//Task 1
+const printMinimum = (a, b) => {
+if (a <= b) {
+return a;} else {return  b;}
+}
+console.log(printMinimum(4,8));
+
+//Task 2
+const isEven = (number) => number % 2 === 0;
+console.log(isEven(5));
+
+//Task 3
+const doubleNumber = (number) => number ** 2;
+console.log(doubleNumber(5));
+
+//Task 4
+const askAge = () => {
+let userAge = prompt('How old are you?');
+if (userAge < 0) {
+alert('Вы ввели неправильное значение');
+} else if (userAge === 0 || userAge <= 12) {
+alert('Привет, друг!');} else {alert('Добро пожаловать!');}
 };
-for (let key in obj) {
-    console.log(`${key} - зарплата ${obj[key]}USD`)
-}
+askAge();
 
-//Task 5//
-let num = 0;
-let n = 1000;
-do  {
-    n = n / 2;
-    console.log(n);
-    num++;
-    } while (n > 50);
-    console.log(`Количество циклов: ${num}`);
-
-//Task 6//
-let firstFriday = 6;
-
-for (let dayCount = 0; dayCount <= 31; dayCount++ ) {
-if (dayCount === firstFriday) {
-console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
-}
-if (dayCount === firstFriday + 7) {
-console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
-}
-if (dayCount === firstFriday + 7 * 2) {
-console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
-}
-if (dayCount === firstFriday + 7 * 3) {
-console.log(`Сегодня пятница, ${dayCount}-е число. Необходимо подготовить отчет.`)
-}
-}
-
-
-//Additional//
-//Task 1//
-let k = 100;
-let iterations = 0;
-do  {
-    k = k - 7;
-    console.log(k);
-    iterations++;
-    } while (k > 0);
-    console.log(`Количество циклов: ${iterations}`);
-
-//Task 2//
-let month = [
-    '', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
-]
-for (let i = 1; i < month.length; i++) {
-    console.log(`${i} - это ${month[i]}`)
-}
-
-//Task 3//
-const book = {
-    title: 'The Master and Margarita',
-    author: 'M. Bulgakov',
-    publishedInEng: 1967,
-    form: 'novel',
+//Task 5
+const isNumber = (a, b) => {
+if (isNaN(a) === true || isNaN(b) === true) {
+return 'Одно или оба значения не являются числом'
+} else {return a * b;}
 };
-for (let key in book) {
-    console.log(`${key}: ${book[key]}`)
-};
+console.log(isNumber(5, 5));
 
-//Task 4//
-let array = [
-    14, 4, 6, 109, 677, 1059, 7, 1
-];
-let min = array[0];
-for (let number of array) {
-  if(number < min) {
-    min = number; 
+//Task 6
+const askNumber = () => {
+let userNumber = prompt('Введите любое число');
+if (isNaN(userNumber) === true) {
+alert('Переданный параметр не является числом')
+} else { alert(`${userNumber} в кубе равняется ${userNumber ** 3}`)}
+};
+askNumber();
+
+//Task 7
+function getArea() {
+let pi = 3.14;
+return this.radius * pi;
 }
-}
-console.log(min); 
+function getPerimeter() {
+let pi = 3.14;
+return 2 * pi * this.radius;
+};
+    
+const circle1 = {
+    radius: 120,
+    getArea: getArea,
+    getPerimeter: getPerimeter,
+};
+    
+const circle2 = {
+    radius: 200,
+    getArea: getArea,
+    getPerimeter: getPerimeter,
+};
+console.log(circle2.getPerimeter())
