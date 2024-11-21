@@ -39,69 +39,50 @@ const guessNumber = () => {
     }
     }
 
-
-
-//Task 1
-const printMinimum = (a, b) => {
-if (a <= b) {
-return a;} else {return  b;}
-}
-console.log(printMinimum(4,8));
-
-//Task 2
-const isEven = (number) => number % 2 === 0;
-console.log(isEven(5));
-
-//Task 3
-const doubleNumber = (number) => number ** 2;
-console.log(doubleNumber(5));
-
-//Task 4
-const askAge = () => {
-let userAge = prompt('How old are you?');
-if (userAge < 0) {
-alert('Вы ввели неправильное значение');
-} else if (userAge === 0 || userAge <= 12) {
-alert('Привет, друг!');} else {alert('Добро пожаловать!');}
-};
-askAge();
-
-//Task 5
-const isNumber = (a, b) => {
-if (isNaN(a) === true || isNaN(b) === true) {
-return 'Одно или оба значения не являются числом'
-} else {return a * b;}
-};
-console.log(isNumber(5, 5));
-
-//Task 6
-const askNumber = () => {
-let userNumber = prompt('Введите любое число');
-if (isNaN(userNumber) === true) {
-alert('Переданный параметр не является числом')
-} else { alert(`${userNumber} в кубе равняется ${userNumber ** 3}`)}
-};
-askNumber();
-
-//Task 7
-function getArea() {
-let pi = 3.14;
-return this.radius * pi;
-}
-function getPerimeter() {
-let pi = 3.14;
-return 2 * pi * this.radius;
-};
+const letsCount = () => {
+    const gameCycle = () => {
+        const numberOne = Math.ceil(Math.random() * 10);
+        const numberTwo = Math.ceil(Math.random() * 10);
+        const operatorArray = ['+', '-', '/', '*'];
+        const i = Math.floor(Math.random() * (3 - 0 + 1))
+        const randomOperator = operatorArray[i];
+        const randomTask = numberOne + randomOperator + numberTwo;
+        const userAnswer = prompt(`Решите задачу:
+        ${randomTask}`);
+        let correctAnswer = eval(randomTask);
+        
+        if (+userAnswer === correctAnswer) {
+        alert(`Это верное решение!`);
+        } else if (userAnswer === null) {
+        alert('Спасибо за игру! Возвращайтесь снова!');
+        } else if (isNaN(userAnswer) === true) {
+        alert('Это не число!');
+        } else if (userAnswer === '') {
+        alert("Вы забыли ввести ответ. Начните заново!");
+        } else if (userAnswer !== correctAnswer) {
+        alert(`К сожалению, Вы ошиблись!`);
+        return;
+        }
+        }
     
-const circle1 = {
-    radius: 120,
-    getArea: getArea,
-    getPerimeter: getPerimeter,
-};
-    
-const circle2 = {
-    radius: 200,
-    getArea: getArea,
-    getPerimeter: getPerimeter,
-};
-console.log(circle2.getPerimeter())
+    const continueCycle = () => {
+        let whetherContinue = confirm('Хотите продолжить игру?');
+        if (whetherContinue === true) {
+        gameCycle();
+        continueCycle();
+        } else {
+        alert('Спасибо за игру! Возвращайтесь снова!');
+        return;
+        }
+        }
+        
+    const letsStart = () => {
+        alert('Начнем игру "Простая арифметика"! Вам нужно будет решить простые арифметические задачи.');   
+        gameCycle();
+        continueCycle();
+    }
+letsStart();
+}
+        
+         
+
