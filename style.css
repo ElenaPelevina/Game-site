@@ -6,6 +6,10 @@
 body {
     font-family: "Montserrat", sans-serif;
 }
+
+button {
+    cursor: pointer;
+}
 .top {
     height: 800px;
     background: 
