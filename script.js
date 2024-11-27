@@ -222,3 +222,15 @@ newDate.setDate(newDate.getDate() + 73);
 console.log(newDate)
 
 //Task 10
+const rusDate = () => {
+    const aDate = new Date();
+    const days = ["воскресенье", "понедельник", "вторник", "среда", "четверг",
+    "пятница", "суббота"];
+    const months = ["января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+
+    return `Дата: ${aDate.getDate()} ${months[aDate.getMonth()]} ${aDate.getFullYear()} - это ${days[aDate.getDay()]}.
+    Время: ${aDate.getHours()}:${aDate.getMinutes()}:${aDate.getSeconds()}. `
+  
+  }
+  console.log(rusDate())
