@@ -167,70 +167,48 @@ const answerTheQuestionsGame = () => {
     
 }
 
-// Task 1
-const toUpper = "js";
-console.log(toUpper.toUpperCase());
-
-//Task 2
-const toArray = (array, string) => {
-return array.filter(str => str.toLowerCase().startsWith(string.toLowerCase()))
-}
-let array = ['hello', 'hell', 'Hello, world', 'amazing'];
-let str = 'hello';
-console.log(toArray(array, str))
-
-//Task 3
-const number = 32.58884;
-console.log(Math.floor(number));
-console.log(Math.ceil(number));
-console.log(Math.round(number));
-
-//Task 4
-console.log(Math.min(52, 53, 49, 77, 21, 32));
-console.log(Math.max(52, 53, 49, 77, 21, 32));
-
-//Task 5
-
-const getRandomNumber = () => Math.round(Math.random() * 10);
-console.log(getRandomNumber());
-
-//Task 6
-const getRandomArray = (a) => {
-  let newArray = [];
-    for (let i = 0; i < a / 2; i++) {
-    newArray[i] = Math.round(Math.random() * (a - 0) + 0);
-    }
-    return newArray;
-    }
-    console.log(getRandomArray(6)) 
-    
-//Task 7
-const getRandomNumbers = (min, max) => {
-    
-return Math.floor(Math.random() * (max - min) + min);
-    
+const letsRockPaperScissors = () => {
+    alert('Давайте сыграем в игру "Камень, ножницы, бумага!"');
+    const doGame = () => {
+    const moveVariations = ["камень", "ножницы", "бумага"];
+    const userAnswer = prompt('Выберете свой ход! Камень, ножницы или бумага?');
+    const randomIndex = Math.floor(Math.random() * (2 - 0 + 1));
+    const computerAnswer = moveVariations[randomIndex];
+    if (userAnswer === "") {
+    alert('Вы забыли сделать ход!');
+    } else if (userAnswer === null) {
+    alert('Спасибо за игру. До встерчи!')
+    } else if (userAnswer === Number) {
+    alert('Вы ввели цифру. Вам надо ввести слово!');
+    } else if (userAnswer.toLowerCase() === computerAnswer.toLowerCase()) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Это ничья!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[0] && computerAnswer.toLowerCase() === moveVariations[1]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[1] && computerAnswer.toLowerCase() === moveVariations[2]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[2] && computerAnswer.toLowerCase() === moveVariations[0]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[2] && computerAnswer.toLowerCase() === moveVariations[1]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. К сожалению, Вы проиграли :(`);
+    } else if (userAnswer.toLowerCase() === moveVariations[1] && computerAnswer.toLowerCase() === moveVariations[0]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. К сожалению, Вы проиграли :(`);
+    } else if (userAnswer.toLowerCase() === moveVariations[0] && computerAnswer.toLowerCase() === moveVariations[2]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. К сожалению, Вы проиграли :(`);
+    } else if (userAnswer.toLowerCase() != moveVariations[0] || userAnswer.toLowerCase() != moveVariations[1] || userAnswer.toLowerCase() != moveVariations[2] ) {
+    alert('Нет такого хода. Начните сначала!');
+    } 
     };
-console.log(getRandomNumbers(1, 5))
+    const whetherContinue = () => {
+    const userAnswer = confirm('Вы хотите сыграть снова?') 
+    if (userAnswer === true) {
+    doGame();
+    whetherContinue();
+    } else {
+    alert('Спасибо за игру! Возвращайтесь снова!')
+    }
+    }
     
-//Task 8
-const currentDate = new Date();
-console.log(currentDate);
-    
-//Task 9
-let newDate = new Date();
-newDate.setDate(newDate.getDate() + 73);
-console.log(newDate)
-
-//Task 10
-const rusDate = () => {
-    const aDate = new Date();
-    const days = ["воскресенье", "понедельник", "вторник", "среда", "четверг",
-    "пятница", "суббота"];
-    const months = ["января", "февраля", "марта", "апреля", "мая", "июня",
-    "июля", "августа", "сентября", "октября", "ноября", "декабря"];
-
-    return `Дата: ${aDate.getDate()} ${months[aDate.getMonth()]} ${aDate.getFullYear()} - это ${days[aDate.getDay()]}.
-    Время: ${aDate.getHours()}:${aDate.getMinutes()}:${aDate.getSeconds()}. `
-  
-  }
-  console.log(rusDate())
+    doGame();
+    whetherContinue();
+    } ;
+ 
