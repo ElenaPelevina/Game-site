@@ -178,9 +178,7 @@ const letsRockPaperScissors = () => {
     alert('Вы забыли сделать ход!');
     } else if (userAnswer === null) {
     alert('Спасибо за игру. До встерчи!')
-    } else if (userAnswer === Number) {
-    alert('Вы ввели цифру. Вам надо ввести слово!');
-    } else if (userAnswer.toLowerCase() === computerAnswer.toLowerCase()) {
+    }  else if (userAnswer.toLowerCase() === computerAnswer.toLowerCase()) {
     alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Это ничья!`);
     } else if (userAnswer.toLowerCase() === moveVariations[0] && computerAnswer.toLowerCase() === moveVariations[1]) {
     alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
