@@ -37,7 +37,7 @@ const guessNumber = () => {
     alert(`Поздравляю! Вы угадали :))) Это было число ${randomNumber}!`);
     return;
     }
-    }
+    }  
 
 const letsCount = () => {
     const gameCycle = () => {
@@ -77,141 +77,160 @@ const letsCount = () => {
         }
         
     
-alert('Начнем игру "Простая арифметика"! Вам нужно будет решить простые арифметические задачи. Округляйте дробные числа до целого!');   
-gameCycle();
-continueCycle();
+  alert('Начнем игру "Простая арифметика"! Вам нужно будет решить простые арифметические задачи. Округляйте дробные числа до целого!');   
+  gameCycle();
+  continueCycle();
 }
 
+const reverseTheText = () => {
+    const letsReverse = () => {
+    
+    const userText = prompt('Напишите слово или текст и получите его перевернутый вид!');
+    
+    if (userText === null) {
+    alert('Спасибо за игру! Продолжим в другой раз!');
+    return;
+    } else if (userText === "") {
+    alert('Ой! Кажется, Вы забыли ввести текст!');
+    } else {
+    const reversedText = userText.split("").reverse().join("");
+    alert(`Ваш перевернутый текст: ${reversedText}`);
+    whetherContinue();
+    }
+    
+    }
+    
+    function whetherContinue() {
+    
+    const letsContinue = confirm('Вы хотите продолжить игру?')
+    
+    if (letsContinue === true) {
+    letsReverse();
+    } else {
+    alert('Спасибо за игру! Продолжим в другой раз!');
+    }
+    
+    }
+    
+    letsReverse();
+    
+}
 
-//Task 1
+const answerTheQuestionsGame = () => {
 
-const arr = [1, 5, 4, 10, 0, 3];
-for ( let i = 0; i < arr.length; i++) {
-if (arr[i - 1] === 10) break;  
-console.log(arr[i]);
-};
+    const quiz = [
+               {
+                   question: "Какого цвета небо?",
+                   options: ["1. Красный", "2. Синий", "3. Зеленый"],
+                   correctAnswer: 2
+                },
+    
+               {
+                   question: "Сколько дней в неделе?",
+                   options: ["1. Шесть", "2. Семь", "3. Восемь"],
+                   correctAnswer: 2
+               },
+    
+               {
+                   question: "Сколько у человека пальцев на одной руке?",
+                   options: ["1. Четыре", "2. Пять", "3. Шесть"],
+                   correctAnswer: 2
+               }
+           ];
+    
+    let result = 0;
+
+    alert(`Начнем нашу викторину!`);
+
+    for (let i = 0; i < quiz.length; i++) {
+    
+    const userAnswer = prompt(`Ответьте на вопрос:
+
+    ${quiz[i]['question']} 
+
+    Варианты ответов:
+
+    ${quiz[i]['options']}`);
+    if (+userAnswer === quiz[i]['correctAnswer']) {
+    alert(`Поздравляю! Это правильный ответ.`);
+    result++;
+    } else if (userAnswer === null) {
+    alert(`Возвращайтесь снова!`);
+    return;
+    } else if (userAnswer ==="") {
+    alert(`Вы забыли ввести ответ! Попробойте еще раз.`);
+    i--;
+    }
+    else { alert(`К сожалению, Вы ошиблись.`)}
+    }
+    alert(`Спасибо за игру! Количество правильных ответов: ${result}.`)
+    
+}
+
+// Task 1
+const toUpper = "js";
+console.log(toUpper.toUpperCase());
 
 //Task 2
-
-const newArr = [1, 5, 4, 10, 0, 3];
-for (let i = 0; i < newArr.length; i++) {
-if (newArr[i] === 4) console.log(`Индекс числа 4 равен ${i}`)
-};
+const toArray = (array, string) => {
+return array.filter(str => str.toLowerCase().startsWith(string.toLowerCase()))
+}
+let array = ['hello', 'hell', 'Hello, world', 'amazing'];
+let str = 'hello';
+console.log(toArray(array, str))
 
 //Task 3
-
-let arrayOne = [1, 3, 5, 10, 20];
-console.log(arrayOne.join(" "));
+const number = 32.58884;
+console.log(Math.floor(number));
+console.log(Math.ceil(number));
+console.log(Math.round(number));
 
 //Task 4
-
-let arrayTwo = [];
-for (let i = 0; i < 3; i++) {
-arrayTwo[i] = [];
-for (let j = 0; j < 3; j++) {
-  arrayTwo[i][j] = 1;
-  }
-}
-console.log(arrayTwo)
+console.log(Math.min(52, 53, 49, 77, 21, 32));
+console.log(Math.max(52, 53, 49, 77, 21, 32));
 
 //Task 5
 
-let arrayThree = [1, 1, 1];
-arrayThree.push(2, 2, 2);
-console.log(arrayThree);
+const getRandomNumber = () => Math.round(Math.random() * 10);
+console.log(getRandomNumber());
 
 //Task 6
-
-let arrayFour = [9, 8, 7, 'a', 6, 5];
-arrayFour.sort().pop();
-console.log(arrayFour);
-
+const getRandomArray = (a) => {
+  let newArray = [];
+    for (let i = 0; i < a / 2; i++) {
+    newArray[i] = Math.round(Math.random() * (a - 0) + 0);
+    }
+    return newArray;
+    }
+    console.log(getRandomArray(6)) 
+    
 //Task 7
-
-const guessNumberTask = () => {
-let array = [9, 8, 7, 6, 5];
-let userAnswer = +prompt('Попробуйте угадать число от 1 до 10');
-if (array.includes(userAnswer)) {alert('Угадал');}
-    else {alert("Не угадал");}
-}
-guessNumberTask();
-
+const getRandomNumbers = (min, max) => {
+    
+return Math.floor(Math.random() * (max - min) + min);
+    
+    };
+console.log(getRandomNumbers(1, 5))
+    
 //Task 8
-
-let string = 'abcdef';
-console.log(string.split("").reverse().join(""))
-
+const currentDate = new Date();
+console.log(currentDate);
+    
 //Task 9
-
-let arrayFive = [[1, 2, 3],[4, 5, 6]];
-let newArray = [...arrayFive[0], ...arrayFive[1]];
-console.log(newArray);
+let newDate = new Date();
+newDate.setDate(newDate.getDate() + 73);
+console.log(newDate)
 
 //Task 10
+const rusDate = () => {
+    const aDate = new Date();
+    const days = ["воскресенье", "понедельник", "вторник", "среда", "четверг",
+    "пятница", "суббота"];
+    const months = ["января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
-let array = [1, 7, 4, 6, 8, 3];
-for (let i = 0; i < array.length - 1; i++)
-console.log(array[i] + array[i + 1])
-
-//Task 11
-
-const doubleArray = (array) => {
-let result = array.map(number => number ** 2);
-return result;
-}
-
-let arrOne = [ 2, 4, 5, 7];
-console.log(doubleArray(arrOne))
-
-//Task 12
-
-const countSigns = (array) => {
-let result = array.map(word => word.length);
-return result;
-}
-
-let arrTwo = [ 'say', "hello", 'ok'];
-console.log(countSigns(arrTwo))
-
-//Task 13
-
-const getNegative = (array) => {
-let result = array.filter(number => number < 0);
-return result;
-}
-
-let arrThree = [ 1, -2, 3];
-console.log(getNegative(arrThree))
-
-//Task 14
-
-const randomArray = [];
-const number = () => {
-return Math.floor(Math.random() * 10);
-}
-
-for (let i = 0; i < 10; i++) {
-randomArray.push(number());
-}
-
-console.log(randomArray);
-const newArrayOne= []
-
-for (let i = 0; i < randomArray.length; i++) {
-if (randomArray[i] % 2 === 0)
-
-newArrayOne.push(randomArray[i]);}
-console.log(newArrayOne);
-
-//Task 15
-
-const randomArrayTwo = [];
-const numberTask = () => {
-return Math.floor(Math.random() * 10);
-}
-
-for (let i = 0; i < 6; i++) {
-randomArrayTwo.push(number());
-}
-console.log(randomArrayTwo);
-console.log(randomArrayTwo.reduce((a, b) => a + b) / randomArrayTwo.length);
+    return `Дата: ${aDate.getDate()} ${months[aDate.getMonth()]} ${aDate.getFullYear()} - это ${days[aDate.getDay()]}.
+    Время: ${aDate.getHours()}:${aDate.getMinutes()}:${aDate.getSeconds()}. `
+  
+  }
+  console.log(rusDate())
