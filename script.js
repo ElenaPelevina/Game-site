@@ -210,3 +210,18 @@ const letsRockPaperScissors = () => {
     whetherContinue();
     } ;
  
+
+    //Task 1
+
+    //Task 2
+
+    //Task 3
+
+    //Task 4
+    function delayForSecond(callback) {
+        setTimeout(callback , 1000);
+        
+    }
+    delayForSecond(function () {
+       console.log('Привет, Глеб!');
+    })  
