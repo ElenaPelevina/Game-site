@@ -231,6 +231,11 @@ function isPositive(a) {
     else {return true}
 }
 
+function isMale (a) {
+    if (a.gender === 'male') { return true}
+    else {return false}
+ }
+
 function filter(arr, ruleFunction) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
@@ -243,6 +248,14 @@ function filter(arr, ruleFunction) {
 
 console.log(filter([3, -4, 1, 9], isPositive));
 
+const people = [
+    {name: 'Глеб', gender: 'male'},
+    {name: 'Анна', gender: 'female'},
+    {name: 'Олег', gender: 'male'},
+    {name: 'Оксана', gender: 'female'}
+ ];
+ 
+ console.log(filter(people, isMale));
 
 //Task 3
 
