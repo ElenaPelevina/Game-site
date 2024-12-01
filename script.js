@@ -216,7 +216,7 @@ const toCompare = (a, b) => {
         return a.age - b.age 
         }
         
-const people = [
+let people = [
            { name: 'Глеб', age: 29 },
            { name: 'Анна', age: 17 },
            { name: 'Олег', age: 7 },
@@ -248,14 +248,14 @@ function filter(arr, ruleFunction) {
 
 console.log(filter([3, -4, 1, 9], isPositive));
 
-const people = [
+let people2 = [
     {name: 'Глеб', gender: 'male'},
     {name: 'Анна', gender: 'female'},
     {name: 'Олег', gender: 'male'},
     {name: 'Оксана', gender: 'female'}
  ];
  
- console.log(filter(people, isMale));
+ console.log(filter(people2, isMale));
 
 //Task 3
 
