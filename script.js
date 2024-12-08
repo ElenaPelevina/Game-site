@@ -167,70 +167,130 @@ const answerTheQuestionsGame = () => {
     
 }
 
-// Task 1
-const toUpper = "js";
-console.log(toUpper.toUpperCase());
+const letsRockPaperScissors = () => {
+    alert('Давайте сыграем в игру "Камень, ножницы, бумага!"');
+    const doGame = () => {
+    const moveVariations = ["камень", "ножницы", "бумага"];
+    const userAnswer = prompt('Выберете свой ход! Камень, ножницы или бумага?');
+    const randomIndex = Math.floor(Math.random() * (2 - 0 + 1));
+    const computerAnswer = moveVariations[randomIndex];
+    if (userAnswer === "") {
+    alert('Вы забыли сделать ход!');
+    } else if (userAnswer === null) {
+    alert('Спасибо за игру. До встерчи!')
+    }  else if (userAnswer.toLowerCase() === computerAnswer.toLowerCase()) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Это ничья!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[0] && computerAnswer.toLowerCase() === moveVariations[1]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[1] && computerAnswer.toLowerCase() === moveVariations[2]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[2] && computerAnswer.toLowerCase() === moveVariations[0]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. Вы победили!`);
+    } else if (userAnswer.toLowerCase() === moveVariations[2] && computerAnswer.toLowerCase() === moveVariations[1]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. К сожалению, Вы проиграли :(`);
+    } else if (userAnswer.toLowerCase() === moveVariations[1] && computerAnswer.toLowerCase() === moveVariations[0]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. К сожалению, Вы проиграли :(`);
+    } else if (userAnswer.toLowerCase() === moveVariations[0] && computerAnswer.toLowerCase() === moveVariations[2]) {
+    alert(`Ваш выбор: ${userAnswer.toLowerCase()}, выбор компьютера: ${computerAnswer.toLowerCase()}. К сожалению, Вы проиграли :(`);
+    } else if (userAnswer.toLowerCase() != moveVariations[0] || userAnswer.toLowerCase() != moveVariations[1] || userAnswer.toLowerCase() != moveVariations[2] ) {
+    alert('Нет такого хода. Начните сначала!');
+    } 
+    };
+    const whetherContinue = () => {
+    const userAnswer = confirm('Вы хотите сыграть снова?') 
+    if (userAnswer === true) {
+    doGame();
+    whetherContinue();
+    } else {
+    alert('Спасибо за игру! Возвращайтесь снова!')
+    }
+    }
+    
+    doGame();
+    whetherContinue();
+    } ;
+ 
+
+//Task 1
+const toCompare = (a, b) => {
+        return a.age - b.age 
+        }
+        
+let people = [
+           { name: 'Глеб', age: 29 },
+           { name: 'Анна', age: 17 },
+           { name: 'Олег', age: 7 },
+           { name: 'Оксана', age: 47 }
+        ];
+        
+console.log(people.sort(toCompare));
 
 //Task 2
-const toArray = (array, string) => {
-return array.filter(str => str.toLowerCase().startsWith(string.toLowerCase()))
+function isPositive(a) {
+    if (a < 0) {return false}
+    else {return true}
 }
-let array = ['hello', 'hell', 'Hello, world', 'amazing'];
-let str = 'hello';
-console.log(toArray(array, str))
+
+function isMale (a) {
+    if (a.gender === 'male') { return true}
+    else {return false}
+ }
+
+function filter(arr, ruleFunction) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+    if (ruleFunction(arr[i]) === true) {
+    newArr.push(arr[i])
+    }
+    }
+    return newArr
+} 
+
+console.log(filter([3, -4, 1, 9], isPositive));
+
+let people2 = [
+    {name: 'Глеб', gender: 'male'},
+    {name: 'Анна', gender: 'female'},
+    {name: 'Олег', gender: 'male'},
+    {name: 'Оксана', gender: 'female'}
+ ];
+ 
+ console.log(filter(people2, isMale));
 
 //Task 3
-const number = 32.58884;
-console.log(Math.floor(number));
-console.log(Math.ceil(number));
-console.log(Math.round(number));
+
+let date = new Date;
+const timer = setInterval(() => console.log(date), 3000 );
+setTimeout(() => { clearInterval(timer); console.log('30 секунд прошло'); }, 3000 * 10);
 
 //Task 4
-console.log(Math.min(52, 53, 49, 77, 21, 32));
-console.log(Math.max(52, 53, 49, 77, 21, 32));
+    
+function delayForSecond(callback) {
+
+    setTimeout(callback , 1000);
+        
+    }
+
+delayForSecond(function () {
+       console.log('Привет, Глеб!');
+    })  
 
 //Task 5
+// Функция delayForSecond через 1 секунду пишет в консоль 
+// «Прошла одна секунда», а затем вызывает переданный колбэк
+function delayForSecond(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+        if(cb) {  cb(); }
+    }, 1000)
+}
 
-const getRandomNumber = () => Math.round(Math.random() * 10);
-console.log(getRandomNumber());
+// Функция sayHi выводит в консоль приветствие для указанного имени
+function sayHi (name) {
+    console.log(`Привет, ${name}!`);
+}
 
-//Task 6
-const getRandomArray = (a) => {
-  let newArray = [];
-    for (let i = 0; i < a / 2; i++) {
-    newArray[i] = Math.round(Math.random() * (a - 0) + 0);
-    }
-    return newArray;
-    }
-    console.log(getRandomArray(6)) 
-    
-//Task 7
-const getRandomNumbers = (min, max) => {
-    
-return Math.floor(Math.random() * (max - min) + min);
-    
-    };
-console.log(getRandomNumbers(1, 5))
-    
-//Task 8
-const currentDate = new Date();
-console.log(currentDate);
-    
-//Task 9
-let newDate = new Date();
-newDate.setDate(newDate.getDate() + 73);
-console.log(newDate)
+// Код выше менять нельзя
 
-//Task 10
-const rusDate = () => {
-    const aDate = new Date();
-    const days = ["воскресенье", "понедельник", "вторник", "среда", "четверг",
-    "пятница", "суббота"];
-    const months = ["января", "февраля", "марта", "апреля", "мая", "июня",
-    "июля", "августа", "сентября", "октября", "ноября", "декабря"];
-
-    return `Дата: ${aDate.getDate()} ${months[aDate.getMonth()]} ${aDate.getFullYear()} - это ${days[aDate.getDay()]}.
-    Время: ${aDate.getHours()}:${aDate.getMinutes()}:${aDate.getSeconds()}. `
-  
-  }
-  console.log(rusDate())
+// Нужно изменить код ниже:
+delayForSecond(() => {sayHi('Глеб')}) 
