@@ -210,87 +210,12 @@ const letsRockPaperScissors = () => {
     whetherContinue();
     } ;
  
-
-//Task 1
-const toCompare = (a, b) => {
-        return a.age - b.age 
-        }
-        
-let people = [
-           { name: 'Глеб', age: 29 },
-           { name: 'Анна', age: 17 },
-           { name: 'Олег', age: 7 },
-           { name: 'Оксана', age: 47 }
-        ];
-        
-console.log(people.sort(toCompare));
-
-//Task 2
-function isPositive(a) {
-    if (a < 0) {return false}
-    else {return true}
+const contentBackground = document.querySelector('.content');
+const getRandomColor = () => {
+ const randomColor = `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padEnd(6, '0')}`;
+ return randomColor
 }
-
-function isMale (a) {
-    if (a.gender === 'male') { return true}
-    else {return false}
- }
-
-function filter(arr, ruleFunction) {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-    if (ruleFunction(arr[i]) === true) {
-    newArr.push(arr[i])
-    }
-    }
-    return newArr
-} 
-
-console.log(filter([3, -4, 1, 9], isPositive));
-
-let people2 = [
-    {name: 'Глеб', gender: 'male'},
-    {name: 'Анна', gender: 'female'},
-    {name: 'Олег', gender: 'male'},
-    {name: 'Оксана', gender: 'female'}
- ];
- 
- console.log(filter(people2, isMale));
-
-//Task 3
-
-let date = new Date;
-const timer = setInterval(() => console.log(date), 3000 );
-setTimeout(() => { clearInterval(timer); console.log('30 секунд прошло'); }, 3000 * 10);
-
-//Task 4
-    
-function delayForSecond(callback) {
-
-    setTimeout(callback , 1000);
-        
-    }
-
-delayForSecond(function () {
-       console.log('Привет, Глеб!');
-    })  
-
-//Task 5
-// Функция delayForSecond через 1 секунду пишет в консоль 
-// «Прошла одна секунда», а затем вызывает переданный колбэк
-function delayForSecond(cb) {
-    setTimeout(() => {
-        console.log('Прошла одна секунда');
-        if(cb) {  cb(); }
-    }, 1000)
-}
-
-// Функция sayHi выводит в консоль приветствие для указанного имени
-function sayHi (name) {
-    console.log(`Привет, ${name}!`);
-}
-
-// Код выше менять нельзя
-
-// Нужно изменить код ниже:
-delayForSecond(() => {sayHi('Глеб')}) 
+const startButton = document.querySelector('.games__button_start');
+startButton.addEventListener('click', function () {
+   contentBackground.style.background = getRandomColor();
+})
