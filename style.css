@@ -88,18 +88,23 @@ button {
     background: white;
 }
 .animation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    column-gap: 51px;
+    overflow: hidden;
     height: 90px;
     width: 100%;
     background-color: rgb(188, 236, 48);
     position: absolute;
     top: 710px;
     z-index: 1;
+}
+.animation__box {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 25px;
+    animation: animation 50s linear infinite;
 }
 
 .animation__text {
@@ -109,9 +114,25 @@ button {
     line-height: 110%;
     letter-spacing: 4%;
     text-align: left;
+    white-space: nowrap;
     text-transform: uppercase;
 }
 
+.animation__image {
+    background-image: url(images/star-aniline.svg);
+    height: 36px;
+    width: 36px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+@keyframes animation {
+    to {
+        transform: translateX(-50%);
+      }
+}
 .content {
     background: 
     url(images/content-star1.svg) 933px 146px no-repeat,
@@ -474,7 +495,7 @@ button:hover {
     }
 
     .animation__image {
-        width: 19px;
+        background-size: 50%;
     }
 
     .about {

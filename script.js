@@ -221,3 +221,4 @@ const startButton = document.querySelector('.games__button_start');
 startButton.addEventListener('click', function () {
     contentBackground.style.background = getRandomColor();
 })
+
