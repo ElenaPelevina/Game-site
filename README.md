@@ -10,4 +10,4 @@
 
 ### Ссылка
 
-Ознакомиться с сайтом можно по ссылке: [Lets' play!]([http://t92682e1.beget.tech/index.html](https://elenapelevina.github.io/Game-site/))
+Ознакомиться с сайтом можно по ссылке: [Let's play!](https://elenapelevina.github.io/Game-site/)
